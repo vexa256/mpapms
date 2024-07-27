@@ -69,11 +69,11 @@
                 <label for="Status" class="form-label">Status</label>
                 <select
                   class="form-control"
-                  v-model="currentReport.Status"
+                  v-model="currentReport.status"
                   required
                 >
-                  <option value="Active">Active</option>
-                  <option value="Disabled">Disabled</option>
+                  <option value="active">Active</option>
+                  <option value="disabled">Disabled</option>
                 </select>
               </div>
               <button type="submit" class="btn btn-primary my-5">
@@ -86,67 +86,82 @@
     </div>
   </div>
 </template>
+
 <script>
+import pb from "../../pocketbase";
+import Swal from "sweetalert2";
+import FullScreenLoader, {
+  isLoading,
+} from "../../components/FullScreenLoader.vue";
+
 export default {
   name: "ReportStatusManagement",
+  components: {
+    FullScreenLoader,
+  },
   data() {
     return {
       reports: [],
-      currentReport: {},
+      currentReport: {
+        ReportName: "",
+        status: "active",
+      },
       isModalOpen: false,
     };
   },
   methods: {
-    LoadDataTables() {
-      setTimeout(function () {
-        $("table").DataTable({
-          responsive: true,
-          dom: "Bfrtip",
-          buttons: ["copy", "csv", "excel", "pdf", "print"],
-        });
-      }, 1000);
-    },
-    fetchReports() {
-      // Ensure proper table name and data handling as per the original setup
-      this.$axios
-        .post(`${window.SERVER_URL}MassFetch`, {
-          TableName: "reporting_timelines", // Make sure this matches exactly with your backend expectation
-          ExcludeColumns: [], // This was missing in your modified version and could be causing the issue if your backend expects it
-        })
-        .then((response) => {
-          this.reports = response.data.data;
-        })
-        .catch((error) => {
-          console.error("Error fetching reports:", error);
-        });
+    async fetchReports() {
+      isLoading.value = true;
+      try {
+        const resultList = await pb
+          .collection("mpa_reporting_timelines")
+          .getFullList({
+            sort: "-created",
+          });
+        this.reports = resultList;
+      } catch (error) {
+        console.error("Error fetching reports:", error);
+        Swal.fire("Error", "Error fetching reports: " + error.message, "error");
+      } finally {
+        isLoading.value = false;
+      }
     },
     showModal(open, report) {
       this.isModalOpen = open;
       this.currentReport = { ...report };
     },
-    submitForm() {
-      const url = `${window.SERVER_URL}MassUpdate`;
-      const payload = {
-        ...this.currentReport,
-        TableName: "reporting_timelines", // Again, ensure this matches your backend's expectations
-      };
-      this.$axios
-        .post(url, payload)
-        .then(() => {
-          Swal.fire("Success", "Report status updated successfully", "success");
-          this.fetchReports(); // Refresh list
-        })
-        .catch((error) => {
-          console.error("Error updating report status:", error);
-        })
-        .finally(() => {
-          this.showModal(false, {});
-        });
+    async submitForm() {
+      isLoading.value = true;
+      try {
+        await pb
+          .collection("mpa_reporting_timelines")
+          .update(this.currentReport.id, {
+            status: this.currentReport.status,
+          });
+        Swal.fire("Success", "Report status updated successfully", "success");
+        this.fetchReports();
+      } catch (error) {
+        console.error("Error updating report status:", error.message);
+        Swal.fire(
+          "Error",
+          "Error updating report status: " + error.message,
+          "error"
+        );
+      } finally {
+        this.showModal(false, {});
+        isLoading.value = false;
+      }
     },
   },
   created() {
     this.fetchReports();
-    this.LoadDataTables();
   },
 };
 </script>
+
+<style scoped>
+.modal.fade.show {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+}
+</style>

@@ -26,7 +26,7 @@
           <span class="menu-title">{{ item.title }}</span>
           <span class="menu-arrow"></span>
         </span>
-        <div class="menu-sub menu-sub-accordion">
+        <div class="menu-sub menu-sub-accordion {{ item.show }}">
           <div
             v-for="subItem in item.subItems"
             :key="subItem.title"
@@ -86,11 +86,11 @@ export default {
               },
               {
                 title: "Country Admins",
-                link: "/country-admins",
+                link: "/Countries",
               },
               {
                 title: "Partner Accounts",
-                link: "/partner-accounts",
+                link: "/Partners",
               },
             ],
           },
@@ -98,38 +98,71 @@ export default {
       },
       {
         title: "Project Reporting",
+        show: "show",
         items: [
           {
             title: "Report Indicators",
             subItems: [
               {
                 title: "Quarterly Indicators",
-                link: "/quarterly-indicators",
+                link: "/QuaterlySelectEntity",
               },
               {
                 title: "Bi-Annual Indicators",
-                link: "/bi-annual-indicators",
+                link: "/SelectEntityBiAnnual",
               },
               {
                 title: "Annual Indicators",
-                link: "/annual-indicators",
+                link: "/SelectEntityReport",
+              },
+
+              {
+                title: "Regional Framework",
+                link: "/RRFSelectEntity",
               },
             ],
           },
           {
-            title: "Review Reports",
+            title: "My  Active Reports",
+            show: "show",
             subItems: [
               {
-                title: "Pending Review",
-                link: "/pending-review",
+                title: "Quarterly Reports",
+                link: "/AQuarterlySelectEntity",
               },
               {
-                title: "Approved Reports",
-                link: "/approved-reports",
+                title: "Bi-Annual Reports",
+                link: "/ABiAnnualSelectEntity",
               },
               {
-                title: "Returned Reports",
-                link: "/returned-reports",
+                title: "Annual Reports",
+                link: "/AAnnualSelectEntity",
+              },
+              {
+                title: "Regional Reports",
+                link: "/ActiveRRFSelectEntity",
+              },
+            ],
+          },
+          {
+            title: "My  Closed Reports",
+            show: "show",
+            subItems: [
+              {
+                title: "Quarterly Reports",
+                link: "/IQuarterlyReportsReportEntity",
+              },
+              {
+                title: "Bi-Annual Reports",
+                link: "/IBiAnnualReportsReportEntity",
+              },
+              {
+                title: "Annual Reports",
+                link: "/IAnnualReportsReportEntity",
+              },
+              {
+                title: "Regional Reports",
+                link: "/IRRFReportsReportEntity",
               },
             ],
           },

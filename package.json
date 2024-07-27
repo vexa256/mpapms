@@ -9,15 +9,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@formkit/vue": "^1.6.5",
+    "@supabase/supabase-js": "^2.44.4",
+    "ag-grid-community": "^32.0.2",
+    "ag-grid-vue3": "^32.0.2",
     "axios": "^1.7.2",
+    "datatables.net": "^2.1.0",
+    "datatables.net-buttons": "^3.1.0",
+    "datatables.net-dt": "^2.1.0",
+    "datatables.net-responsive": "^3.0.2",
+    "datatables.net-vue3": "^3.0.2",
+    "jspdf-autotable": "^3.8.2",
+    "jszip": "^3.10.1",
+    "pdfmake": "^0.2.10",
+    "pocketbase": "^0.21.3",
     "sweetalert2": "^11.12.2",
     "vue": "^3.4.29",
     "vue-crud-x": "^0.4.5",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.0",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
+    "supabase": "^1.183.5",
     "vite": "^5.3.1"
   }
 }

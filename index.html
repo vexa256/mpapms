@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--begin::Head-->
+  <!--begin::Head-->
 
-<head>
+  <head>
     <title>ECSA-HC Project Management System</title>
     <meta charset="utf-8" />
-    <meta name="description"
-        content="ECSA-HC Project Management System using Metronic for comprehensive project tracking and management." />
-    <meta name="keywords" content="ECSA-HC, Project Management, Metronic, Bootstrap, Admin Theme, VueJs" />
+    <meta
+      name="description"
+      content="ECSA-HC Project Management System using Metronic for comprehensive project tracking and management."
+    />
+    <meta
+      name="keywords"
+      content="ECSA-HC, Project Management, Metronic, Bootstrap, Admin Theme, VueJs"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
@@ -17,120 +22,238 @@
     <link rel="canonical" href="https://yourdomain.com" />
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"
+    />
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used for this page only)-->
-    <link href="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link
+      href="/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/plugins/custom/datatables/datatables.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-    <link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link
+      href="/assets/plugins/global/plugins.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/style.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-
+    <link
+      href="assets/plugins/custom/datatables/datatables.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <style>
-    .form-control.form-control-solid {
+      .form-control.form-control-solid {
         border-color: black !important;
-    }
-    .form-select-solid{
-
-
+      }
+      .form-select-solid {
         border-color: black !important;
-
-    }
-    
+      }
     </style>
     <style>
-        .ck-placeholder {
+      .ck-placeholder {
+        display: none !important;
+      }
 
-            display: none !important;
-        }
+      .btn-group-sm > .btn,
+      .btn-sm {
+        padding: 0.25rem 0.4rem;
+        font-size: 0.875rem;
+        line-height: 0.5;
+        border-radius: 0.2rem;
+      }
 
-        .btn-group-sm>.btn,
-        .btn-sm {
-            padding: .25rem .4rem;
-            font-size: .875rem;
-            line-height: .5;
-            border-radius: .2rem;
-        }
+      .table-pad {
+        padding-top: 3px !important;
+      }
 
-        .table-pad {
+      .tox-tinymce {
+        height: 400px !important;
+      }
 
-            padding-top: 3px !important;
-        }
+      tr,
+      td,
+      th,
+      tbody,
+      thead {
+        font-size: 13px !important;
+        padding: 6px !important;
+      }
 
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-        .tox-tinymce {
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 10px !important;
+      }
 
-            height: 400px !important;
-        }
+      ::-webkit-scrollbar-track {
+        background: transparent !important;
+        border-radius: 10px !important;
+      }
 
-        tr,
-        td,
-        th,
-        tbody,
-        thead {
+      ::-webkit-scrollbar-thumb {
+        background-color: #007bff !important;
+        border-radius: 10px !important;
+        border: 2px solid transparent !important;
+        background-clip: padding-box !important;
+      }
 
-            font-size: 12px !important;
-            padding: 6px !important;
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #0056b3 !important;
+      }
+      table,
+      table th,
+      table td,
+      table thead,
+      table tbody,
+      table tfoot,
+      table tr {
+        font-weight: 600 !important;
+        /* padding: 0px !important; */
+      }
 
-        }
+      table {
+        background-color: #e4e9ec !important;
+      }
+
+      .btn {
+        font-size: 12px !important;
+      }
+      /* This rule will apply zero padding to all <td> elements within any <table> */
+
+      /* Ensure the CSS is loaded after DataTables CSS to override styles */
+      /*  .btn {
+        color: inherit !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        font-weight: 700 !important;
+      } */
+
+      /*  .btn.btn-primary,
+       .btn.btn-secondary,
+       .btn.btn-success,
+       .btn.btn-danger,
+       .btn.btn-warning,
+       .btn.btn-info,
+       .btn.btn-light,
+       .btn.btn-dark {
+        color: inherit !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+      } */
+
+      /*  .btn {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+  border: 1px dashed #17a2b8 !important;
+  color: #17a2b8 !important;
+} */
+
+      /*  .btn:hover {
+  background-color: #17a2b8 !important;
+  color: #ffffff !important;
+}
+
+ .btn:focus,
+ .btn:active {
+  background-color: #138496 !important;
+  color: #ffffff !important;
+} */
+      /* Reset styles for dt-buttons */
+      /*  {
+        all: unset;
+        display: contents; 
+      } */
+
+      button {
+        all: unset;
+        /* font-weight: normal !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important; */
+      }
+      .next {
+        color: black !important;
+      }
     </style>
-
 
     <script>
-        window.generateHexadecimal =  () => {
-            // Generate a random number, convert it to a base 16 string, and slice off the "0." at the start
-            let randomHex = (Math.random() * 0xFFFFFFFFFFFF).toString(16);
-            // Pad the string with leading zeros if it's less than 10 characters
-            return randomHex.slice(0, 10).padStart(10, '0');
-        }
+      window.generateHexadecimal = () => {
+        // Generate a random number, convert it to a base 16 string, and slice off the "0." at the start
+        let randomHex = (Math.random() * 0xffffffffffff).toString(16);
+        // Pad the string with leading zeros if it's less than 10 characters
+        return randomHex.slice(0, 10).padStart(10, "0");
+      };
     </script>
     <!--end::Global Stylesheets Bundle-->
-</head>
-<!--end::Head-->
-<!--begin::Body-->
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+  <body
+    id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default"
+  >
     <!--begin::Theme mode setup on page load-->
     <!--end::Theme mode setup on page load-->
     <!--begin::App-->
 
     <script>
-    var defaultThemeMode = "light";
-    var themeMode;
-    if (document.documentElement) {
+      var defaultThemeMode = "light";
+      var themeMode;
+      if (document.documentElement) {
         if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
-            themeMode =
-                document.documentElement.getAttribute("data-bs-theme-mode");
+          themeMode =
+            document.documentElement.getAttribute("data-bs-theme-mode");
         } else {
-            if (localStorage.getItem("data-bs-theme") !== null) {
-                themeMode = localStorage.getItem("data-bs-theme");
-            } else {
-                themeMode = defaultThemeMode;
-            }
+          if (localStorage.getItem("data-bs-theme") !== null) {
+            themeMode = localStorage.getItem("data-bs-theme");
+          } else {
+            themeMode = defaultThemeMode;
+          }
         }
         if (themeMode === "system") {
-            themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ?
-                "dark" :
-                "light";
+          themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
         }
         document.documentElement.setAttribute("data-bs-theme", themeMode);
-    }
+      }
     </script>
     <!--end::Theme mode setup on page load-->
     <div id="app"></div>
 
     <script>
-    var hostUrl = "assets/";
+      var hostUrl = "assets/";
     </script>
-
- 
 
     <script src="/assets/plugins/global/plugins.bundle.js"></script>
     <script src="/assets/js/scripts.bundle.js"></script>
@@ -138,46 +261,187 @@
 
     <script type="module" src="/src/main.js"></script>
 
-
     <script>
+      var KTComponents = {
+        init: function () {
+          // Initialize all components
+          KTApp.init();
+          KTDrawer.init();
+          KTMenu.init();
+          KTScroll.init();
+          KTSticky.init();
+          KTSwapper.init();
+          KTToggle.init();
+          KTScrolltop.init();
+          KTDialer.init();
+          KTImageInput.init();
+          KTPasswordMeter.init();
 
-        var KTComponents = {
-            init: function() {
-                // Initialize all components
-                KTApp.init();
-                KTDrawer.init();
-                KTMenu.init();
-                KTScroll.init();
-                KTSticky.init();
-                KTSwapper.init();
-                KTToggle.init();
-                KTScrolltop.init();
-                KTDialer.init();
-                KTImageInput.init();
-                KTPasswordMeter.init();
-        
-                // Fallback initialization for select2
-                $('[data-control="select2"]').each(function() {
-                    $(this).select2({
-                        placeholder: $(this).data('placeholder') || "Select an option",
-                        width: "100%"
-                    });
-                });
-            }
-        };
-        
-        "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", function() {
+          // Fallback initialization for select2
+          $('[data-control="select2"]').each(function () {
+            $(this).select2({
+              placeholder: $(this).data("placeholder") || "Select an option",
+              width: "100%",
+            });
+          });
+        },
+      };
+
+      "loading" === document.readyState
+        ? document.addEventListener("DOMContentLoaded", function () {
             KTComponents.init();
-        }) : KTComponents.init();
-        
-        window.addEventListener("load", function() {
-            KTApp.hidePageLoading();
-        });
-        
+          })
+        : KTComponents.init();
+
+      window.addEventListener("load", function () {
+        KTApp.hidePageLoading();
+      });
+
+      // $(document).ready(function () {
+      //   setTimeout(function () {
+      //     $("table").DataTable({
+      //       responsive: true,
+      //       dom: "Bfrtip",
+      //       buttons: ["copy", "csv", "excel", "pdf", "print"],
+      //     });
+      //   }, 1500); // 1.5 seconds delay
+      // });
+
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   setInterval(() => {
+      //     const buttonGroup = document.querySelector(
+      //       ".btn-group.flex-wrap"
+      //     );
+      //     if (buttonGroup) {
+      //       const buttons = buttonGroup.querySelectorAll(
+      //         "button.btn.btn-secondary"
+      //       );
+      //       buttons.forEach((button) => {
+      //         button.classList.remove("btn-secondary");
+      //         button.classList.add(
+      //           "btn-outline",
+      //           "btn-outline-dashed",
+      //           "btn-outline-info",
+      //           "btn-active-light-info",
+      //           "shadow-lg"
+      //         );
+      //         button.style.fontWeight = "700";
+      //       });
+      //     }
+      //   }, 1000);
+      // });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // setInterval(() => {
+        //   // Update the pagination buttons
+        //   const paginationGroup = document.querySelector(
+        //     ".dataTables_paginate.paging_simple_numbers"
+        //   );
+        //   if (paginationGroup) {
+        //     // Update the 'li' elements
+        //     const liElements =
+        //       paginationGroup.querySelectorAll("li.paginate_button");
+        //     liElements.forEach((li) => {
+        //       // li.classList.remove('paginate_button');
+        //     });
+        //     // Update the 'a' elements inside 'li'
+        //     const buttons = paginationGroup.querySelectorAll("a.page-link");
+        //     buttons.forEach((button) => {
+        //       button.className = ""; // Clear existing classes
+        //       button.classList.add(
+        //         "btn",
+        //         "btn-outline",
+        //         "btn-outline-dashed",
+        //         "btn-outline-info",
+        //         "btn-active-light-info",
+        //         "shadow-lg"
+        //       );
+        //       button.style.fontWeight = "700";
+        //     });
+        //   }
+        //     document.addEventListener('DOMContentLoaded', () => {
+        //   setInterval(() => {
+        //     const dtButtonsGroups = document.querySelectorAll('');
+        //     dtButtonsGroups.forEach(element => {
+        //       if (element.classList.contains('dt-buttons')) {
+        //         element.classList.remove('dt-buttons');
+        //       }
+        //     });
+        //   }, 1000);
+        // });
+        // // Update the DataTables buttons
+        // const dtButtonsGroups = document.querySelectorAll('');
+        // dtButtonsGroups.forEach(group => {
+        //   const buttons = group.querySelectorAll('button.btn-secondary');
+        //   buttons.forEach(button => {
+        //     button.className = ''; // Clear existing classes
+        //     button.classList.add('btn', 'btn-outline', 'btn-outline-dashed', 'btn-outline-info', 'btn-active-light-info', 'shadow-lg');
+        //     button.style.fontWeight = '700';
+        //   });
+        // });
+        //   }, 1000);
+      });
+
+      // $(document).ready(function () {
+      //   const interval = setInterval(() => {
+      //     const dtButtonsDiv = $("div.btn-group.flex-wrap");
+      //     if (dtButtonsDiv.length) {
+      //       dtButtonsDiv.removeClass("dt-buttons");
+      //       clearInterval(interval); // Stop checking once the class is removed
+      //     }
+      //   }, 1000);
+      // });
+
+      $(document).ready(function () {
+        setInterval(() => {
+          // Select all anchor and button elements with the specified classes and replace them with new classes
+          $(
+            "a.btn.btn-light, .btn-sm, a.btn.btn-primary, a.btn.btn-secondary, a.btn.btn-success, a.btn.btn-info, a.btn.btn-warning, a.btn.btn-danger, a.btn.btn-dark, button.btn.btn-light, button.btn.btn-primary, button.btn.btn-secondary, button.btn.btn-success, button.btn.btn-info, button.btn.btn-warning, button.btn.btn-danger, .page-link, button.btn.btn-dark"
+          ).each(function () {
+            $(this)
+              .removeClass(
+                "btn-light btn-sm btn-primary  btn-secondary btn-success btn-info btn-warning btn-danger btn-dark"
+              )
+              .addClass(
+                "btn btn-outline btn-outline-dashed btn-outline-secondary btn-active-light-secondary"
+              );
+            $(this).css("font-weight", "700");
+          });
+        }, 800);
+      });
+
+      $(document).ready(function () {
+        setInterval(() => {
+          // Select all anchor and button elements with the specified classes and replace them with new classes
+          $("th").each(function () {
+            $(this).addClass(
+              "py-5 fw-semibold  border-bottom border-gray-300 fs-6"
+            );
+            $(this).css("font-weight", "700");
+          });
+
+          $("tr").each(function () {
+            $(this).addClass("shadow-lg");
+            $(this).css("font-weight", "700");
+          });
+        }, 800);
+      });
+
+      $(document).ready(function () {
+        setInterval(() => {
+          // Select all anchor and button elements with the specified classes and replace them with new classes
+          $(".dt-buttons").each(function () {
+            $(this).addClass("shadow-lg");
+            $(this).css("font-weight", "700");
+          });
+
+          $("tr").each(function () {
+            $(this).addClass("shadow-lg");
+            $(this).css("font-weight", "700");
+          });
+        }, 800);
+      });
     </script>
-
-    
-</body>
-<!--end::Body-->
-
+  </body>
+  <!--end::Body-->
 </html>
